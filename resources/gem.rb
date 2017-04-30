@@ -1,6 +1,6 @@
 default_action :install
 
-property :gem, [String]
+property :gems, [String]
 property :version, [String, NilClass], default: nil
 property :user, [String], default: 'root'
 property :ruby_string, [String], required: true
