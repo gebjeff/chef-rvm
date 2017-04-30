@@ -1,6 +1,6 @@
-user 'ubuntu' do
+user 'rvm-user' do
   manage_home true
-  comment 'Ubuntu User'
-  home '/home/ubuntu'
+  comment 'RVM User'
+  home '/home/rvm-user'
   shell '/bin/bash'
 end

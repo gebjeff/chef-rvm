@@ -1,12 +1,13 @@
 name 'chef_rvm'
 maintainer 'R&R Innovation LLC'
 maintainer_email 'work at murga.kiev.ua'
-license 'Apache v2.0'
+license 'Apache-2.0'
 description 'Installs/Configures rvm'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-# source_url 'https://github.com/MurgaNikolay/chef-rvm'
-# issues_url 'https://github.com/MurgaNikolay/chef-rvm/issues'
+source_url 'https://github.com/RallySoftware-cookbooks/chef-rvm' if respond_to?(:source_url)
+issues_url 'https://github.com/RallySoftware-cookbooks/chef-rvm/issues' if respond_to?(:issues_url)
 version '2.0.0'
+chef_version '>= 12.5' if respond_to?(:chef_version)
 
 recipe 'chef_rvm', 'Installs all'
 recipe 'chef_rvm::rvm', 'Installs the rvm for users'
@@ -20,17 +21,19 @@ supports 'ubuntu'
 supports 'debian'
 
 depends 'sudo'
-depends 'apt'
 depends 'build-essential'
 depends 'chef_gem'
 depends 'curl'
 
 # if using jruby, java is required on system
-recommends 'java' # For jruby
-recommends 'maven' # For jruby
-recommends 'nodejs' # for opal
-recommends 'mono' # for ironruby
-recommends 'homebrew' # for jruby
+depends 'java' # For jruby
+depends 'maven' # For jruby
+depends 'nodejs' # for opal
+depends 'mono' # for ironruby
+depends 'homebrew' # for jruby
+
+# if installing on Debian-based distros
+depends 'apt'
 
 # for installing on OSX, this is required for installation and compilation
-# suggests 'homebrew'
+# depends 'homebrew'
