@@ -9,7 +9,7 @@ node['chef_rvm']['users'].each do |username, rvm|
       chef_rvm_gem "rvm:gem:#{username}:#{ruby_string}:#{resource_config['gem']}" do
         user username
         ruby_string ruby_string
-        gem resource_config['gem']
+        gems resource_config['gem']
         version resource_config['version'] if resource_config['version']
         action resource_config['action'] if resource_config['action']
       end
