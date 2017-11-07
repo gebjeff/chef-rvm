@@ -18,7 +18,7 @@ action :install do
     rubies = Array(rubies) if rubies.is_a?(String)
     rubies.each do |ruby_string, options|
       options ||= {}
-      chef_rvm_ruby "#{user}:#{ruby_string}" do
+      chef_rvm_ruby "#{new_resource.user}:#{ruby_string}" do
         user new_resource.user
         version ruby_string
         patch options['patch']

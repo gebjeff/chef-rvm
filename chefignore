@@ -62,6 +62,7 @@ Procfile
 .gitmodules
 .gitconfig
 .gitattributes
+.gitkeep
 .svn
 */.bzr/*
 */.hg/*
